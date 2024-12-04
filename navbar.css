@@ -1,0 +1,90 @@
+.nav {
+	background-color: white;
+	padding: 10px 20px;
+  padding-top: 20px;
+}
+
+.nav-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.nav p {
+	font-size: 14px;
+	color: rgb(92, 92, 92);
+}
+
+.nav-back-btn {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.nav img {
+	width: 15px;
+	height: 15px;
+}
+
+.undo-redo {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.nav-redo,
+.nav-undo {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.nav-undo img {
+	transform: scaleX(-1);
+}
+
+.undo-redo img {
+	width: 14px;
+	height: 14px;
+}
+
+.nav-title {
+	display: flex;
+	gap: 100px;
+	align-items: center;
+	font-weight: 600;
+}
+.nav-title p {
+	font-size: 22px;
+}
+
+.nav-btns{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.nav-save p{
+  padding: 1px 15px;
+  border: 3px solid black;
+  border-radius: 20px;
+}
+
+.nav-download{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  background-color: black;
+  color: white;
+  padding: 4px 15px;
+  border-radius: 20px;
+}
+
+.nav-download p{
+  color: white;
+}
+
+.nav-download img{
+  filter: invert(100%);
+}

@@ -3,13 +3,59 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!-- Styel sheets -->
 		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="navbar.css">
+
+		<!-- CDN Links -->
 		<link
 			rel="stylesheet"
 			href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+		<!-- Title  -->
 		<title>Assignment</title>
 	</head>
 	<body>
+		<!--========== Navbar ========== -->
+		<div class="nav">
+			<div class="nav-container">
+				<div class="nav-back-btn">
+					<img src="assets/back.png" alt="" />
+					<p>back</p>
+				</div>
+				<div class="undo-redo">
+					<div class="nav-undo">
+						<img src="assets/redo-alt.png" alt="" />
+						<p>Undo</p>
+					</div>
+					<div class="nav-redo">
+						<img src="assets/redo-alt.png" alt="" />
+						<p>Redo</p>
+					</div>
+				</div>
+
+				<div class="nav-title">
+					<p>Unititled Video</p>
+					<img src="assets/edit.png" alt="">
+
+				</div>
+
+				<div class="nav-btns">
+					<div class="nav-upload">
+						<img src="assets/upload.png" alt="">
+
+					</div>
+					<div class="nav-save">
+						<p>Save</p>
+					</div>
+					<div class="nav-download">
+						<p>Download</p>
+						<img src="assets/downloads.png" alt="">
+					</div>
+				</div>
+			</div>
+		</div>
 		<div class="main">
 			<div class="template-image">
 				<div class="swiper">
@@ -35,7 +81,7 @@
 					<div class="swiper-button-next"></div>
 
 					<!-- If we need scrollbar -->
-					<div class="swiper-scrollbar"></div>
+					<!-- <div class="swiper-scrollbar"></div> -->
 				</div>
 			</div>
 			<div class="settings">to be edited</div>
@@ -43,24 +89,23 @@
 	</body>
 
 	<script>
-		const swiper = new Swiper(".swiper", {
-			// Optional parameters
-
-			// If we need pagination
-			pagination: {
-				el: ".swiper-pagination",
-			},
-
-			// Navigation arrows
-			navigation: {
-				nextEl: ".swiper-button-next",
-				prevEl: ".swiper-button-prev",
-			},
-
-			// And if we need scrollbar
-			scrollbar: {
-			  el: '.swiper-scrollbar',
-			},
+		document.addEventListener("DOMContentLoaded", () => {
+			const swiper = new Swiper(".swiper", {
+				// Optional parameters
+				loop: true, // Enables infinite looping of slides
+				pagination: {
+					el: ".swiper-pagination",
+					clickable: true, // Makes pagination dots clickable
+				},
+				navigation: {
+					nextEl: ".swiper-button-next",
+					prevEl: ".swiper-button-prev",
+				},
+				// scrollbar: {
+				// 	el: ".swiper-scrollbar",
+				// 	draggable: true, // Enables dragging on scrollbar
+				// },
+			});
 		});
 	</script>
 	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
