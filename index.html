@@ -6,7 +6,7 @@
 
 		<!-- Styel sheets -->
 		<link rel="stylesheet" href="style.css" />
-		<link rel="stylesheet" href="navbar.css">
+		<link rel="stylesheet" href="navbar.css" />
 
 		<!-- CDN Links -->
 		<link
@@ -37,41 +37,45 @@
 
 				<div class="nav-title">
 					<p>Unititled Video</p>
-					<img src="assets/edit.png" alt="">
-
+					<img src="assets/edit.png" alt="" />
 				</div>
 
 				<div class="nav-btns">
 					<div class="nav-upload">
-						<img src="assets/upload.png" alt="">
-
+						<img src="assets/upload.png" alt="" />
 					</div>
 					<div class="nav-save">
 						<p>Save</p>
 					</div>
 					<div class="nav-download">
 						<p>Download</p>
-						<img src="assets/downloads.png" alt="">
+						<img src="assets/downloads.png" alt="" />
 					</div>
 				</div>
 			</div>
 		</div>
 		<div class="main">
-			<div class="template-image">
+			<div class="editor">
 				<div class="swiper">
 					<!-- Additional required wrapper -->
 					<div class="swiper-wrapper">
 						<!-- Slides -->
 						<div class="swiper-slide">
-							<img src="assets/template.png" alt="" />
+							<div class="page" id="page1">
+								<div class="text-section">
+									<div class="textbox" contenteditable="true">
+										This is default text
+									</div>
+									<div class="drag-handle"><img src="assets/all-directions.png" alt=""></div>
+								</div>
+							</div>
 						</div>
 						<div class="swiper-slide">
-							<img src="assets/template.png" alt="" />
+							<div class="page" id="page2"></div>
 						</div>
 						<div class="swiper-slide">
-							<img src="assets/template.png" alt="" />
+							<div class="page" id="page3"></div>
 						</div>
-						...
 					</div>
 					<!-- If we need pagination -->
 					<div class="swiper-pagination"></div>
@@ -84,15 +88,133 @@
 					<!-- <div class="swiper-scrollbar"></div> -->
 				</div>
 			</div>
-			<div class="settings">to be edited</div>
+
+			<!-- setting section -->
+			<div class="settings">
+				<div class="setting-back"><img src="assets/back.png" alt="" /></div>
+
+				<div class="setting-title">
+					<p>New Text</p>
+				</div>
+
+				<div class="setting-textbox">
+					<div class="setting-language">
+						<label for="language">Language</label>
+						<select id="language" name="language">
+							<option value="English">English</option>
+							<option value="Tamil">Tamil</option>
+							<option value="Telugu">Telugu</option>
+							<option value="French">French</option>
+						</select>
+					</div>
+					<div class="setting-textbox-content">This is default content</div>
+				</div>
+
+				<div class="setting-font-bold">
+					<div class="setting-font">
+						<select id="font" name="font">
+							<option value="Courier New">Courier New</option>
+							<option value="Times New Roman">Times New Roman</option>
+							<option value="Arial">Arial</option>
+							<option value="Monospace">Monospace</option>
+						</select>
+					</div>
+					<div class="setting-bold">
+						<select id="bold" name="bold">
+							<option class="option" value="400">Regular</option>
+							<option class="option" value="200">Light</option>
+							<option class="option" value="600">Bold</option>
+							<option class="option" value="900">Boldest</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="setting-config">
+					<div class="setting-font-size">
+						<select id="size" name="size">
+							<option class="option" value="8">8</option>
+							<option class="option" value="9">9</option>
+							<option class="option" value="11">11</option>
+							<option class="option" value="13" selected>13</option>
+							<option class="option" value="16">16</option>
+							<option class="option" value="20">20</option>
+							<option class="option" value="24">24</option>
+							<option class="option" value="28">28</option>
+							<option class="option" value="35">35</option>
+							<option class="option" value="40">40</option>
+							<option class="option" value="45">45</option>
+							<option class="option" value="50">50</option>
+							<option class="option" value="60">60</option>
+							<option class="option" value="70">70</option>
+						</select>
+						<p>Font Size</p>
+					</div>
+
+					<div class="setting-color">
+						<div class="demo-color"></div>
+						<div class="demo-color-options">
+							<div
+								class="demo-color-option"
+								value="#000000"
+								style="background-color: #000000"></div>
+							<div
+								class="demo-color-option"
+								value="#2dff38"
+								style="background-color: #2dff38"></div>
+							<div
+								class="demo-color-option"
+								value="#2d8fff"
+								style="background-color: #2d8fff"></div>
+							<div
+								class="demo-color-option"
+								value="#ca3e84"
+								style="background-color: #ca3e84"></div>
+							<div
+								class="demo-color-option"
+								value="#701212"
+								style="background-color: #701212"></div>
+							<div
+								class="demo-color-option"
+								value="#bcd81c"
+								style="background-color: #6a791a"></div>
+						</div>
+						<p>Color</p>
+					</div>
+
+					<div class="setting-alignment">
+						<img src="assets/format.png" alt="" />
+						<p>Alingment</p>
+					</div>
+
+					<div class="setting-lineht">
+						<img src="assets/line-height.png" alt="" />
+						<p>Line Height</p>
+					</div>
+				</div>
+				<div class="setting-font-bold">
+					<div class="start-animation setting-bold">
+						<select id="bold" name="bold">
+							<option class="option" value="400">Start Animation</option>
+						</select>
+					</div>
+					<div class="end-animation setting-bold">
+						<select id="bold" name="bold">
+							<option class="option" value="400">End Animation</option>
+						</select>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="more-edit">
+			<img src="assets/edit.png" alt="" />
+			<p>More editing options</p>
 		</div>
 	</body>
 
 	<script>
 		document.addEventListener("DOMContentLoaded", () => {
 			const swiper = new Swiper(".swiper", {
-				// Optional parameters
-				loop: true, // Enables infinite looping of slides
+
 				pagination: {
 					el: ".swiper-pagination",
 					clickable: true, // Makes pagination dots clickable
@@ -101,12 +223,11 @@
 					nextEl: ".swiper-button-next",
 					prevEl: ".swiper-button-prev",
 				},
-				// scrollbar: {
-				// 	el: ".swiper-scrollbar",
-				// 	draggable: true, // Enables dragging on scrollbar
-				// },
+
 			});
 		});
 	</script>
 	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+	<script src="color.js"></script>
+	<script src="textbox.js"></script>
 </html>

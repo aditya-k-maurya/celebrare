@@ -1,47 +1,240 @@
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-body::-webkit-scrollbar{
-  display: none;
+body::-webkit-scrollbar {
+	display: none;
 }
 
-.main{
-  background-color: gray;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
+select {
+	border: none;
+	color: rgb(92, 92, 92);
 }
 
-.swiper{
-  height: 600px !important;
-  width: 400px !important;
-
+select option {
+	border-radius: 1px;
+	width: 150%;
+	margin-top: 10px;
 }
 
-.swiper-slide{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+select:focus {
+	outline: none;
+	border: none;
 }
 
-.swiper-slide img{
-  margin: auto;
-  margin-top: 1rem;
-  display: block;
-  width: 300px;
-  object-fit: contain;
+option:hover {
+	background-color: rgb(189, 189, 189);
 }
 
-
-.swiper-button-prev, .swiper-button-next{
-  color: black !important;
-  transform: scale(50%);
+.main {
+	display: flex;
+	justify-content: center;
+	/* align-items: center; */
+	gap: 20px;
+	align-content: stretch;
+	padding-top: 2rem;
+	color: rgb(92, 92, 92);
 }
 
+.swiper {
+	height: 600px;
+	width: 400px;
+}
+
+.swiper-slide {
+	display: flex !important;
+	justify-content: center;
+}
+
+.page {
+	width: 315px;
+	height: 560px;
+	background-color: red;
+	background-image: url("assets/template.png");
+	background-size: cover;
+	position: relative;
+}
+
+.text-section {
+	position: relative;
+	display: inline-block;
+	margin: 20px;
+}
+
+.textbox {
+	font-size: 16px;
+	min-width: 100px;
+	min-height: 50px;
+	padding: 10px;
+	border: 1px solid #ddd;
+	outline: none;
+	transition: border 0.3s ease, background-color 0.3s ease;
+}
+
+.textbox.selected {
+	border: 2px solid #4caf50; /* Green border when selected */
+	background-color: #f4f4f4; /* Light background when selected */
+}
+
+.drag-handle {
+	position: absolute;
+	bottom: -20px; /* Below the textbox */
+	left: 50%;
+	transform: translateX(-50%);
+	cursor: grab;
+	display: none; /* Hide initially */
+}
+
+.selected .drag-handle {
+	display: block; /* Show drag handle only when textbox is selected */
+}
+
+.drag-handle img{
+  width: 14px;
+  height: 14px;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+	color: black !important;
+	transform: scale(50%);
+}
+
+/* setting section */
+
+.settings {
+	padding: 20px;
+	width: 300px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.setting-back img {
+	width: 15px;
+	height: 15px;
+}
+
+.setting-textbox {
+	border: 1px solid gray;
+	border-radius: 3px;
+}
+
+.setting-language {
+	display: flex;
+	justify-content: space-between;
+	gap: 20px;
+	padding: 2px 10px;
+	border-bottom: 1px solid gray;
+}
+
+.setting-language {
+	font: 500;
+	color: rgb(37, 37, 37);
+}
+
+.setting-textbox-content {
+	padding: 10px;
+	height: 100px;
+	overflow: hidden;
+}
+
+.setting-font-bold {
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+}
+
+.setting-bold,
+.setting-font {
+	padding: 4px 12px;
+	border: 1px solid gray;
+	border-radius: 3px;
+}
+
+.setting-config {
+	display: flex;
+	justify-content: space-between;
+	gap: 15px;
+	font-size: 11px;
+	border: 1px solid gray;
+	padding: 10px;
+	border-radius: 3px;
+}
+
+#size {
+	max-height: 100px;
+	overflow: hidden;
+}
+
+.setting-color {
+	cursor: pointer;
+	position: relative;
+}
+
+.demo-color {
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background-color: #bcd81c;
+}
+
+.demo-color-options {
+	position: absolute;
+	/* display: flex; */
+	justify-content: space-between;
+	gap: 5px;
+	width: 100px;
+	height: 60px;
+	margin-top: 10px;
+	flex-wrap: wrap;
+	background-color: rgb(212, 212, 212);
+	padding: 10px;
+	border-radius: 5px;
+	display: none;
+}
+
+.demo-color-option {
+	height: 20px;
+	width: 20px;
+}
+.setting-alignment,
+.setting-lineht {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.setting-alignment img,
+.setting-lineht img {
+	width: 20px;
+	height: 20px;
+}
+
+.start-animation,
+.end-animation {
+	width: 125px;
+}
+
+/* more edit option */
+.more-edit {
+	display: flex;
+	gap: 10px;
+	padding: 7px 20px;
+	border-radius: 20px;
+	background-color: rgb(177, 177, 177);
+	position: fixed;
+	bottom: 6%;
+	right: 5%;
+	font-size: 11px;
+	color: rgb(19, 19, 19);
+}
+
+.more-edit img {
+	width: 15px;
+	height: 15px;
+}
