@@ -62,11 +62,11 @@
 						<!-- Slides -->
 						<div class="swiper-slide">
 							<div class="page" id="page1">
-								<div class="text-section">
-									<div class="textbox" contenteditable="true">
-										This is default text
+								<div class="text-section" name="Blessing 1">
+									<textarea name="textbox" class="textbox">New Text</textarea>
+									<div class="drag-handle">
+										<img src="assets/all-directions.png" alt="" />
 									</div>
-									<div class="drag-handle"><img src="assets/all-directions.png" alt=""></div>
 								</div>
 							</div>
 						</div>
@@ -107,7 +107,7 @@
 							<option value="French">French</option>
 						</select>
 					</div>
-					<div class="setting-textbox-content">This is default content</div>
+					<textarea id="text-content" class="setting-textbox-content" rows="4"> </textarea>
 				</div>
 
 				<div class="setting-font-bold">
@@ -121,7 +121,7 @@
 					</div>
 					<div class="setting-bold">
 						<select id="bold" name="bold">
-							<option class="option" value="400">Regular</option>
+							<option class="option" value="500">Regular</option>
 							<option class="option" value="200">Light</option>
 							<option class="option" value="600">Bold</option>
 							<option class="option" value="900">Boldest</option>
@@ -135,9 +135,9 @@
 							<option class="option" value="8">8</option>
 							<option class="option" value="9">9</option>
 							<option class="option" value="11">11</option>
-							<option class="option" value="13" selected>13</option>
+							<option class="option" value="13">13</option>
 							<option class="option" value="16">16</option>
-							<option class="option" value="20">20</option>
+							<option class="option" value="20" selected>20</option>
 							<option class="option" value="24">24</option>
 							<option class="option" value="28">28</option>
 							<option class="option" value="35">35</option>
@@ -181,8 +181,8 @@
 						<p>Color</p>
 					</div>
 
-					<div class="setting-alignment">
-						<img src="assets/format.png" alt="" />
+					<div class="setting-alignment" id="align" value="start">
+						<img id="align-img" src="assets/align-start.png" alt="" />
 						<p>Alingment</p>
 					</div>
 
@@ -204,6 +204,29 @@
 					</div>
 				</div>
 			</div>
+
+			<!-- content display -->
+			<div class="overview">
+				<div class="text-item">
+					<div class="text-title">Blessing 1</div>
+					<div class="text-content">This is default content</div>
+				</div>
+			</div>
+
+			<!-- More edit option section -->
+			<div class="options">
+				<div class="option-title">More edit options</div>
+				<div class="option-cont">
+					<div class="option-text">
+						<img src="assets/font.png" alt="" />
+						<p>Add Text</p>
+					</div>
+					<div class="option-image">
+						<img src="assets/image.png" alt="" />
+						<p>Add Image</p>
+					</div>
+				</div>
+			</div>
 		</div>
 		<div class="more-edit">
 			<img src="assets/edit.png" alt="" />
@@ -214,7 +237,6 @@
 	<script>
 		document.addEventListener("DOMContentLoaded", () => {
 			const swiper = new Swiper(".swiper", {
-
 				pagination: {
 					el: ".swiper-pagination",
 					clickable: true, // Makes pagination dots clickable
@@ -223,11 +245,12 @@
 					nextEl: ".swiper-button-next",
 					prevEl: ".swiper-button-prev",
 				},
-
 			});
 		});
 	</script>
 	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+	<script src="script.js"></script>
 	<script src="color.js"></script>
 	<script src="textbox.js"></script>
+	<script src="settings.js"></script>
 </html>

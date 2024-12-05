@@ -9,6 +9,9 @@
 body::-webkit-scrollbar {
 	display: none;
 }
+textarea::-webkit-scrollbar{
+  display: none;
+}
 
 select {
 	border: none;
@@ -66,13 +69,23 @@ option:hover {
 }
 
 .textbox {
-	font-size: 16px;
-	min-width: 100px;
-	min-height: 50px;
+  position: absolute;
+	height: 40px ip !important;
 	padding: 10px;
-	border: 1px solid #ddd;
 	outline: none;
-	transition: border 0.3s ease, background-color 0.3s ease;
+  background: transparent;
+  height: auto;
+  border: none;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 20px;
+  font-weight: 500;
+  width: 120px;
+  top: 200px;
+  left: 100px;
+}
+.textbox:focus{
+	border: 1px solid #1d1d1d;
+
 }
 
 .textbox.selected {
@@ -93,9 +106,9 @@ option:hover {
 	display: block; /* Show drag handle only when textbox is selected */
 }
 
-.drag-handle img{
-  width: 14px;
-  height: 14px;
+.drag-handle img {
+	width: 14px;
+	height: 14px;
 }
 
 .swiper-button-prev,
@@ -112,6 +125,7 @@ option:hover {
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
+	display: none;
 }
 
 .setting-back img {
@@ -139,8 +153,11 @@ option:hover {
 
 .setting-textbox-content {
 	padding: 10px;
-	height: 100px;
 	overflow: hidden;
+  border: none;
+  outline: none;
+  width: 100%;
+  /* height: 100px; */
 }
 
 .setting-font-bold {
@@ -232,9 +249,65 @@ option:hover {
 	right: 5%;
 	font-size: 11px;
 	color: rgb(19, 19, 19);
+  cursor: pointer;
 }
 
 .more-edit img {
 	width: 15px;
 	height: 15px;
+}
+
+/* overview section */
+
+.overview {
+	padding: 20px;
+	width: 300px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	/* display: none; */
+}
+
+.text-item {
+	margin-bottom: 1rem;
+}
+.text-title {
+	color: black;
+	margin-bottom: 6px;
+}
+.text-content {
+	border: 1px solid gray;
+	border-radius: 3px;
+	padding: 10px;
+}
+
+/* more edit option section */
+.options{
+  display: none;
+}
+.option-cont {
+	display: flex;
+}
+
+.option-title{
+  margin-bottom: 10px;
+  color: black;
+
+}
+
+.option-text,
+.option-image {
+	border: 1px solid gray;
+	border-radius: 3px;
+  padding: 5px 40px;
+  font-size: 11px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.options img{
+  height: 20px;
+  width: 20px;
 }
