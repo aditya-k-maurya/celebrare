@@ -68,13 +68,37 @@
 										<img src="assets/all-directions.png" alt="" />
 									</div>
 								</div>
+								<div class="text-section" name="Blessing 2">
+									<textarea name="textbox" class="textbox">My blessing are with you</textarea>
+									<div class="drag-handle">
+										<img src="assets/all-directions.png" alt="" />
+									</div>
+								</div>
 							</div>
 						</div>
 						<div class="swiper-slide">
-							<div class="page" id="page2"></div>
+							<div class="page" id="page2">
+								<div class="text-section" name="Blessing 1">
+									<textarea name="textbox" class="textbox">
+This is the page 2</textarea
+									>
+									<div class="drag-handle">
+										<img src="assets/all-directions.png" alt="" />
+									</div>
+								</div>
+							</div>
 						</div>
 						<div class="swiper-slide">
-							<div class="page" id="page3"></div>
+							<div class="page" id="page3">
+								<div class="text-section" name="Content">
+									<textarea name="textbox" class="textbox">
+Here we go again</textarea
+									>
+									<div class="drag-handle">
+										<img src="assets/all-directions.png" alt="" />
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 					<!-- If we need pagination -->
@@ -107,7 +131,8 @@
 							<option value="French">French</option>
 						</select>
 					</div>
-					<textarea id="text-content" class="setting-textbox-content" rows="4"> </textarea>
+					<textarea id="text-content" class="setting-textbox-content" rows="4">
+					</textarea>
 				</div>
 
 				<div class="setting-font-bold">
@@ -207,10 +232,10 @@
 
 			<!-- content display -->
 			<div class="overview">
-				<div class="text-item">
+				<!-- <div class="text-item">
 					<div class="text-title">Blessing 1</div>
 					<div class="text-content">This is default content</div>
-				</div>
+				</div> -->
 			</div>
 
 			<!-- More edit option section -->
@@ -234,7 +259,7 @@
 		</div>
 	</body>
 
-	<script>
+	<!-- <script>
 		document.addEventListener("DOMContentLoaded", () => {
 			const swiper = new Swiper(".swiper", {
 				pagination: {
@@ -247,10 +272,10 @@
 				},
 			});
 		});
-	</script>
+	</script> -->
 	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-	<script src="script.js"></script>
-	<script src="color.js"></script>
-	<script src="textbox.js"></script>
-	<script src="settings.js"></script>
+	<script src="javascript/script.js"></script>
+	<script src="javascript/color.js"></script>
+	<script src="javascript/textdrag.js"></script>
+	<script src="javascript/settings.js"></script>
 </html>

@@ -9,8 +9,8 @@
 body::-webkit-scrollbar {
 	display: none;
 }
-textarea::-webkit-scrollbar{
-  display: none;
+textarea::-webkit-scrollbar {
+	display: none;
 }
 
 select {
@@ -56,7 +56,7 @@ option:hover {
 .page {
 	width: 315px;
 	height: 560px;
-	background-color: red;
+	/* background-color: red; */
 	background-image: url("assets/template.png");
 	background-size: cover;
 	position: relative;
@@ -66,44 +66,49 @@ option:hover {
 	position: relative;
 	display: inline-block;
 	margin: 20px;
+	top: 200px;
+	left: 50px;
 }
 
 .textbox {
-  position: absolute;
-	height: 40px ip !important;
+	position: absolute;
 	padding: 10px;
 	outline: none;
-  background: transparent;
-  height: auto;
-  border: none;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 20px;
-  font-weight: 500;
-  width: 120px;
-  top: 200px;
-  left: 100px;
+	background: transparent;
+	/* height: auto !important; */
+	border: none;
+	font-family: "Courier New", Courier, monospace;
+	font-size: 20px;
+	font-weight: 500;
+	width: 120px;
+  resize: both;
 }
-.textbox:focus{
+.textbox:focus {
 	border: 1px solid #1d1d1d;
-
+  background-color: white;
 }
 
+/* 
 .textbox.selected {
-	border: 2px solid #4caf50; /* Green border when selected */
-	background-color: #f4f4f4; /* Light background when selected */
-}
+	border: 2px solid #4caf50;
+	background-color: #f4f4f4; 
+} */
 
 .drag-handle {
-	position: absolute;
-	bottom: -20px; /* Below the textbox */
-	left: 50%;
-	transform: translateX(-50%);
+  display: none; 
+  position: absolute;
 	cursor: grab;
-	display: none; /* Hide initially */
+  left: -20px;
+  top: 20px;
+  background-color: white;
+  padding: 2px;
+  border-radius: 15px;
+  border: .5px solid gray;
+  /* display: none; */
 }
 
-.selected .drag-handle {
-	display: block; /* Show drag handle only when textbox is selected */
+.textbox:focus + .drag-handle {
+  display: block;
 }
 
 .drag-handle img {
@@ -154,10 +159,10 @@ option:hover {
 .setting-textbox-content {
 	padding: 10px;
 	overflow: hidden;
-  border: none;
-  outline: none;
-  width: 100%;
-  /* height: 100px; */
+	border: none;
+	outline: none;
+	width: 100%;
+	/* height: 100px; */
 }
 
 .setting-font-bold {
@@ -249,7 +254,7 @@ option:hover {
 	right: 5%;
 	font-size: 11px;
 	color: rgb(19, 19, 19);
-  cursor: pointer;
+	cursor: pointer;
 }
 
 .more-edit img {
@@ -282,32 +287,31 @@ option:hover {
 }
 
 /* more edit option section */
-.options{
-  display: none;
+.options {
+	display: none;
 }
 .option-cont {
 	display: flex;
 }
 
-.option-title{
-  margin-bottom: 10px;
-  color: black;
-
+.option-title {
+	margin-bottom: 10px;
+	color: black;
 }
 
 .option-text,
 .option-image {
 	border: 1px solid gray;
 	border-radius: 3px;
-  padding: 5px 40px;
-  font-size: 11px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+	padding: 5px 40px;
+	font-size: 11px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
-.options img{
-  height: 20px;
-  width: 20px;
+.options img {
+	height: 20px;
+	width: 20px;
 }
