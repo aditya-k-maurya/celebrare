@@ -81,27 +81,55 @@ const updateTextbox = () => {
 	activeTextbox.style.color = color;
 };
 
-const setHighlight = (textbox) => {
-  textboxes.forEach((tb) => {
-    let parent = tb.parentElement;
+const getPosition = (textbox) => {
+	const textboxRect = textbox.getBoundingClientRect();
+	const clickX = e.clientX - textboxRect.left;
+	const clickY = e.clientY - textboxRect.top;
 
-    tb.classList.remove("highlighted");
-    parent.style.zIndex = 1; 
-  });
+	const lineHeight = 20;
+	const charWidth = 10;
 
-  textbox.classList.add("highlighted");
-  textbox.parentElement.style.zIndex = 100;
+	const row = Math.floor(clickY / lineHeight);
+	const col = Math.floor(clickX / charWidth);
+
+	const cursorPosition = row * textbox.cols + col;
+
+	textbox.setSelectionRange(cursorPosition, cursorPosition);
 };
 
+const setHighlight = (textbox) => {
+	textboxes.forEach((tb) => {
+		let parent = tb.parentElement;
+
+		tb.classList.remove("highlighted");
+		parent.style.zIndex = 1;
+	});
+
+	textbox.classList.add("highlighted");
+	textbox.parentElement.style.zIndex = 100;
+};
 
 // ============ event linstner in new Textboxes =======
+let ct = 0;
 const setNewTextbox = () => {
 	textboxes = document.querySelectorAll(".textbox");
 	textboxes.forEach((textbox) => {
 		textbox.addEventListener("click", (e) => {
-			e.preventDefault();
 			setHighlight(textbox);
 			showSettings(textbox);
+			if (document.activeElement === textbox) {
+				getPosition(textbox);
+			} else {
+				if (ct == 1) {
+					textbox.focus();
+
+					getPosition(textbox);
+					ct = 0;
+				} else {
+					e.preventDefault();
+					ct++;
+				}
+			}
 		});
 
 		textbox.addEventListener("change", () => {

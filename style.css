@@ -88,6 +88,24 @@ option:hover {
   background-color: white;
 }
 
+.textbox:hover{
+  cursor:move;
+}
+
+.textbox:focus{
+  cursor: text;
+}
+
+.text1{
+  top: 50px;
+  left: 25px;
+}
+
+.text1 textarea{
+  font-weight: 600;
+  width: 200px;
+}
+
 /* 
 .textbox.selected {
 	border: 2px solid #4caf50;
@@ -106,10 +124,10 @@ option:hover {
   border: .5px solid gray;
   /* display: none; */
 }
-
+/* 
 .textbox:focus + .drag-handle {
   display: block;
-}
+} */
 
 .drag-handle img {
 	width: 14px;
